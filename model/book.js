@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Schema } = mongoose.Schema;
+const { Schema } = mongoose;
 
 const bookSchema = new Schema({
   title: String, // String is shorthand for {type: String}
@@ -8,9 +8,9 @@ const bookSchema = new Schema({
     max: 20,
   },
   year: {
-    type: Date,
+    type: Number,
     required: true,
-    max: [currentYear, "Error future date not allowed!"],
+    max: [2024, "Error future date not allowed!"],
   },
   description: String,
   ibsn: String,
